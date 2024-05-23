@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions Supportive Housing Programs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
+        }
+        nav a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background: #555;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .donate-btn, .merch-btn, .refer-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        .donate-btn:hover, .merch-btn:hover, .refer-btn:hover {
+            background-color: #218838;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .hidden {
+            display: none;
+        }
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Transitions Supportive Housing Programs</h1>
+    </header>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#programs">Programs</a>
+        <a href="#donate">Donate</a>
+        <a href="#merch">Merchandise</a>
+        <a href="#referrals">Referrals</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <div id="about" class="section">
+            <h2>About Us</h2>
+            <p>Transitions Supportive Housing Programs provides life skills training, mentorship, and affordable housing programs to at-risk youth. Our goal is to support at-risk youth in building confidence, allowing them to transition to independence successfully.</p>
+        </div>
+        <div id="programs" class="section">
+            <h2>Our Programs</h2>
+            <p>We offer various programs designed to help at-risk youth gain the skills and support they need to become independent and successful.</p>
+        </div>
+        <div id="donate" class="section">
+            <h2>Donate</h2>
+            <button class="donate-btn" onclick="toggleModal('donateModal')">Donate Now</button>
+        </div>
+        <div id="merch" class="section">
+            <h2>Merchandise</h2>
+            <p>Purchase our Sugar Coated Merch to help support our programs for youth.</p>
+            <button class="merch-btn" onclick="toggleModal('merchModal')">Shop Now</button>
+        </div>
+        <div id="referrals" class="section">
+            <h2>Referrals</h2>
+            <p>We are accepting referrals for our summer accelerated life skills program where youth are given a $250 honorarium for participation and can get community volunteer hours as well.</p>
+            <button class="refer-btn" onclick="toggleModal('referModal')">Refer a Youth</button>
+        </div>
+        <div id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>Email: info@transitionshousing.org</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Transitions Supportive Housing Programs</p>
+    </footer>
+
+    <div id="donateModal" class="modal hidden">
+        <h3>Donate to Transitions Supportive Housing Programs</h3>
+        <p>Your support helps us provide essential programs to at-risk youth.</p>
+        <button class="donate-btn" onclick="toggleModal('donateModal')">Close</button>
+    </div>
+    <div id="merchModal" class="modal hidden">
+        <h3>Sugar Coated Merch</h3>
+        <p>Check out our merchandise and support our youth programs.</p>
+        <button class="merch-btn" onclick="toggleModal('merchModal')">Close</button>
+    </div>
+    <div id="referModal" class="modal hidden">
+        <h3>Refer a Youth</h3>
+        <p>Fill out the form to refer a youth for our summer program.</p>
+        <button class="refer-btn" onclick="toggleModal('referModal')">Close</button>
+    </div>
+    <div id="overlay" class="overlay hidden"></div>
+
+    <script>
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const overlay = document.getElementById('overlay');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                overlay.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+                overlay.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
